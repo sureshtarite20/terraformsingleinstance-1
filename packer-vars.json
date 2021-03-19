@@ -1,9 +1,9 @@
 {
     "aws_access_key": "xxx",
-    "aws_secret_key": "yyy",
+    "aws_secret_key": "YYYY",
     "region": "us-east-1",
     "source_ami":"ami-00ddb0e5626798373",
     "instance_type":"t2.micro",
-    "vpc_id": "vpc-0f47002cff9d8dd21",
-    "subnet_id": "subnet-0596d277b10eedf7f"
+    "vpc_id": "vpc-054a4997424616e5b",
+    "subnet_id": "subnet-0f8ccdfc04bd825e6"
 }
