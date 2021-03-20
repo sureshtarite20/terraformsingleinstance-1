@@ -92,13 +92,13 @@ resource "aws_security_group" "allow_all" {
     }
 }
 
-terraform {
-  backend "s3" {
-    bucket = "terraform-git-s3-backend"
-    key    = "terraform-s3-backend.tfstate"
-    region = "us-east-1"
-  }
-}
+# terraform {
+#   backend "s3" {
+#     bucket = "terraform-git-s3-backend"
+#     key    = "terraform-s3-backend.tfstate"
+#     region = "us-east-1"
+#   }
+# }
 
 # data "aws_ami" "my_ami" {
 #      most_recent      = true
@@ -107,23 +107,23 @@ terraform {
 # }
 
 
-resource "aws_instance" "web-1" {
-    ami = var.imagename
-    #ami = "ami-0d857ff0f5fc4e03b"
-    #ami = "${data.aws_ami.my_ami.id}"
-    availability_zone = "us-east-1a"
-    instance_type = "t2.micro"
-    key_name = "devops-hp-laptop-key"
-    subnet_id = "${aws_subnet.subnet1-public.id}"
-    vpc_security_group_ids = ["${aws_security_group.allow_all.id}"]
-    associate_public_ip_address = true	
-    tags = {
-        Name = "Server-1"
-        Env = "Dev"
-        Owner = "Suresh"
-	CostCenter = "ABCD"
-    }
-}
+# resource "aws_instance" "web-1" {
+#     ami = var.imagename
+#     #ami = "ami-0d857ff0f5fc4e03b"
+#     #ami = "${data.aws_ami.my_ami.id}"
+#     availability_zone = "us-east-1a"
+#     instance_type = "t2.micro"
+#     key_name = "devops-hp-laptop-key"
+#     subnet_id = "${aws_subnet.subnet1-public.id}"
+#     vpc_security_group_ids = ["${aws_security_group.allow_all.id}"]
+#     associate_public_ip_address = true	
+#     tags = {
+#         Name = "Server-1"
+#         Env = "Dev"
+#         Owner = "Suresh"
+# 	CostCenter = "ABCD"
+#     }
+# }
 
 ##output "ami_id" {
 #  value = "${data.aws_ami.my_ami.id}"
