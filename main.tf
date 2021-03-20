@@ -92,6 +92,14 @@ resource "aws_security_group" "allow_all" {
     }
 }
 
+terraform {
+  backend "s3" {
+    bucket = "terraform-git-s3-backend"
+    key    = "terraform-s3-backend.tfstate"
+    region = "us-east-1"
+  }
+}
+
 # data "aws_ami" "my_ami" {
 #      most_recent      = true
 #      #name_regex       = "^mavrick"
